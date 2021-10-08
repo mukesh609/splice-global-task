@@ -1,0 +1,19 @@
+<table class="table table-bordered  table-fixed">
+    <thead style="background-color:lightpink;">
+        <tr>
+            <th>Account No.</th>
+            <th>Description</th>
+            <th>Account Type</th>
+            <th>Filter</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="data">
+        <tr *ngFor="let unit of data">
+            <td>{{unit.accountNo}}</td>
+            <td>{{unit.description}}</td>
+            <td>{{unit.accountType}}</td>
+            <td>{{unit.filter}}</td>
+
+        </tr>
+    </tbody>
+</table>

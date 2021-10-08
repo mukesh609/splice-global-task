@@ -1,0 +1,59 @@
+<div *ngIf="data">
+    <ul class="list-group list-group-flush" style="padding: 0px;">
+        <li class="list-group-item  " style="padding: 3px;" *ngFor="let value of data">
+            <div class="row justify-content-between">
+                <div class="col-2 py-3">
+                    <i [ngClass]="value.icon" aria-hidden="true"></i>
+                </div>
+                <div class="col-10">
+                    <div class="row p-0">
+                        <div class="col-8 ">
+                            <small style="font-size: 12px;">{{value.title}}</small>
+
+                        </div>
+                        <div class="col-4" style="padding-right: 2px; text-align: end;">
+                            <small style="font-size:10px; " class="fw-lighter ">{{value.date}}</small>
+                        </div>
+                    </div>
+                    <div class="row px-0">
+                        <div class="col-12 " style="padding-right:2px;">
+                            <small style="font-size: xx-small;"> {{value.desc}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+<!-- <div *ngIf="messages">
+    <ul class="list-group list-group-flush" style="padding: 0px;">
+        <li class="list-group-item  " style="padding: 3px;" *ngFor="let msg of messages">
+            <div class="row justify-content-between">
+                <div class="col-2 py-3">
+                    <i class="fa fa-smile-o" aria-hidden="true"></i>
+                </div>
+                <div class="col-10">
+                    <div class="row p-0">
+                        <div class="col-8 ">
+                            <small style="font-size: 12px;">{{msg.name}}</small>
+
+                        </div>
+                        <div class="col-4" style="padding-right: 2px; text-align: end;">
+                            <small style="font-size:10px; " class="fw-lighter ">{{msg.date}}</small>
+                        </div>
+                    </div>
+                    <div class="row px-0">
+                        <div class="col-12 " style="padding-right:2px;">
+                            <small style="font-size: xx-small;"> {{msg.msg}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</div> -->

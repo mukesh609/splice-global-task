@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  display!: boolean;
+
   title = 'splice-global-task';
+  constructor() { }
+
+  click() {
+    this.display = !this.display;
+  }
 }

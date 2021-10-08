@@ -1,0 +1,22 @@
+.table-fixed tr{
+ display: block; 
+ overflow-y: auto; 
+
+  
+}
+.table-fixed tbody{
+ overflow-y: auto; 
+ height: 300px; 
+ display: block; 
+ /* width: 100%; */
+ 
+}
+th, td{
+    width:25%;
+}
+
+.table-fixed thead th, .table-fixed tbody td{
+   
+    float: left;
+    
+}

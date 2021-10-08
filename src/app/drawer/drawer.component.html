@@ -1,0 +1,183 @@
+<mat-drawer-container class="h-100">
+    <mat-drawer #drawer mode="side" style="width: 168px ; background-color:palevioletred;">
+
+        <div style="height: 12%; top:0px ; background-color:lightpink">
+
+        </div>
+        <mat-button-toggle-group style="position:absolute; bottom: 0px; border-radius: 0px;">
+            <mat-button-toggle matTooltip="Profile">
+                <i class="fa fa-user"></i>
+            </mat-button-toggle>
+            <mat-button-toggle matTooltip="mailbox">
+                <i class="fa fa-envelope"></i>
+
+            </mat-button-toggle>
+            <mat-button-toggle matTooltip="lockscreen">
+                <i class="fa fa-lock"></i>
+            </mat-button-toggle>
+            <mat-button-toggle matTooltip="signout">
+                <i class="fa fa-sign-out"></i>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+        <nav class="navbar navbar-light " style="background-color:palevioletred;">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <button mat-button type="button" (click)="drawer.toggle()">
+                        <mat-icon>format_align_justify</mat-icon>
+                    </button>
+                    <button mat-button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+
+                </div>
+                <div>
+                    <button mat-button> <i class="fa fa-globe" aria-hidden="true"></i></button>
+                    <button mat-button type="button" [popover]="notification" [popoverOnHover]="false"> <i
+                            class="fa fa-bell" aria-hidden="true">
+                            <span
+                                class="position-absolute top-0 start-70 translate-middle p-1 bg-danger  rounded-circle">
+                                <span class="visually-hidden">.</span>
+                            </span>
+                        </i>
+                    </button>
+                    <button mat-button type="button" [popover]="msg" [popoverOnHover]="false"> <i class="fa fa-comment"
+                            aria-hidden="true">
+                            <span
+                                class="position-absolute top-0 start-70 translate-middle p-1 bg-danger  rounded-circle">
+                                <span class="visually-hidden">.</span>
+                            </span>
+                        </i></button>
+                    <button mat-button type="button" [popover]="profile" [popoverOnHover]="false"> <i
+                            class="fa fa-user-circle" aria-hidden="true"></i></button>
+
+
+
+
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- <div style="display:flex; flex-direction: row;">
+            <div class="bg-dark " style="height: 100%; width:50px; top:0px">
+                <div class="bg-secondary " style="height: 10%; width:50px; top:0px">
+
+                </div>
+            </div>
+
+
+            <div class="bg-light h-100">
+                <button mat-button type="button" (click)="drawer.toggle()">
+                    <mat-icon>format_align_justify</mat-icon>
+                </button>
+                <h1>Hello this is first container</h1>
+
+            </div>
+        </div> -->
+        <!-- <button mat-button type="button" (click)="drawer.toggle()">
+            <mat-icon>format_align_justify</mat-icon>
+        </button>
+        <button mat-button type="button" (click)="drawer.toggle()">
+            <mat-icon>format_align_justify</mat-icon>
+        </button> -->
+
+        <div class="container-fluid">
+            <div class="row text-center mt-3">
+                <h5>Charts of Account</h5>
+            </div>
+            <div class="container-fluid">
+                <mat-card>
+                    <mat-card-content>
+                        <div class="row ">
+                            <div class="col-6">
+                                <div class="row ">
+
+                                    <div class="col-4  d-flex">
+                                        <span class="fw-normal py-2 mx-2">Show</span>
+                                        <!-- <mat-label>choose</mat-label> -->
+                                        <select class="form-control " style="font-size: 15px;">
+                                            <option value="" selected>--All Account--</option>
+                                            <option value="">Inactive</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="offset-2 col-6">
+
+                                        <select class="form-control" style="font-size: 15px;">
+                                            <option value="" selected>--All Account--</option>
+                                            <option value="">Inactive</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <app-table></app-table>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+<popover-content #notification placement="bottom" [animation]="true" [closeOnClickOutside]="true">
+    <div class="d-flex  w-100 ">
+        <span style="font-size: 12px; " class="fw-bold">notification </span>
+        <span style="margin-left:10px" class="badge bg-primary rounded-pill fw-lighter">+5 new notification</span>
+
+    </div>
+    <app-popover [data]="not"></app-popover>
+
+
+</popover-content>
+<popover-content #msg placement="bottom" [animation]="true" [closeOnClickOutside]="true">
+
+    <div class="d-flex  w-100 ">
+        <span style="font-size: 12px; " class="fw-bold"> Messages</span>
+        <span style="margin-left:10px" class="badge bg-primary rounded-pill fw-lighter">+5 new messages</span>
+
+    </div>
+    <app-popover [data]="messages"></app-popover>
+</popover-content>
+<popover-content #profile placement="bottom" [animation]="true" [closeOnClickOutside]="true">
+    <div class="row justify-content-between">
+        <div class="col-2 py-3">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        </div>
+        <div class="col-10">
+            <div class="row p-0">
+                <div class="col-12 ">
+                    <small style="font-size: 12px;">Mukesh</small>
+
+                </div>
+
+            </div>
+            <div class="row px-0">
+                <div class="col-12 " style="padding-right:2px;">
+                    <small style="font-size: xx-small;">mukeshmaurya.leo609@gmail.com</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group list-group-flush w-100">
+        <li class="list-group-item fw-lighter " style="font-size: xx-small;" *ngFor="let list of menu"><a
+                href="">{{list}}
+            </a></li>
+
+
+    </ul>
+
+</popover-content>
